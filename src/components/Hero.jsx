@@ -116,27 +116,7 @@ const Hero = () => {
           Explore My Work →
         </a>
 
-        {/* Image Placeholder */}
-
-        <div
-          className="
-            mt-16
-
-            h-72
-            w-60
-
-            rounded-[2rem]
-            bg-neutral-200
-
-            sm:h-96
-            sm:w-80
-
-            md:h-[520px]
-            md:w-[420px]
-            md:rounded-[2.5rem]
-          "
-        />
-      </div>
+        </div>
     </section>
   );
 };
