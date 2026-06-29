@@ -67,7 +67,7 @@ const projects = [
 
     image: jdk,
 
-    live: "#",
+    live: "https://jdk-techsphere.vercel.app/",
 
     github: "#",
   },
