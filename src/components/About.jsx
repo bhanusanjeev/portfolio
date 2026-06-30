@@ -1,5 +1,5 @@
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import terminalData from "../data/TerminalData";
 
 import TerminalWindow from "./TerminalWindow";
@@ -8,10 +8,16 @@ import TerminalLine from "./TerminalLine";
 
 const About = () => {
   const [bootCompleted, setBootCompleted] = useState(false);
-
+  const [started, setStarted] = useState(false);
   // Which terminal line is currently active
   const [activeLine, setActiveLine] = useState(0);
 
+  useEffect(() => {
+  if (!started) return;
+
+  setBootCompleted(false);
+  setActiveLine(0);
+}, [started]);
   return (
     <section
       id="about"
@@ -40,15 +46,23 @@ const About = () => {
 
         {/* Terminal */}
 
-        <TerminalWindow>
-          {!bootCompleted ? (
-            <TerminalBoot
-              onComplete={() => {
-                setBootCompleted(true);
-                setActiveLine(0);
-              }}
-            />
-          ) : (
+        <motion.div
+  initial={false}
+  viewport={{
+  once: true,
+  amount: 0.5,
+}}
+  onViewportEnter={() => setStarted(true)}
+>
+  <TerminalWindow>
+          {!started ? null : !bootCompleted ? (
+  <TerminalBoot
+    onComplete={() => {
+      setBootCompleted(true);
+      setActiveLine(0);
+    }}
+  />
+) : (
             <div className="space-y-12">
               {terminalData.map((item, index) => (
                 <TerminalLine
@@ -78,7 +92,8 @@ const About = () => {
               )}
             </div>
           )}
-        </TerminalWindow>
+          </TerminalWindow>
+</motion.div>
 
         {/* Stats */}
 
