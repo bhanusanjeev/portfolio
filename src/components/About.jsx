@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import terminalData from "../data/terminalData";
+import terminalData from "../data/TerminalData";
 
 import TerminalWindow from "./TerminalWindow";
 import TerminalBoot from "./TerminalBoot";
