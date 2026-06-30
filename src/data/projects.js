@@ -44,9 +44,9 @@ const projects = [
 
     image: habittracker,
 
-    live: "#",
+    live: "https://ai-planner-7aa2.onrender.com/",
 
-    github: "#",
+    github: "https://github.com/bhanusanjeev/Ai-planner",
   },
 
   {
@@ -69,7 +69,7 @@ const projects = [
 
     live: "https://jdk-techsphere.vercel.app/",
 
-    github: "#",
+    github: "https://github.com/bhanusanjeev/JDK-Techsphere",
   },
 ];
 
