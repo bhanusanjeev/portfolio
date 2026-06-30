@@ -24,95 +24,134 @@ console.log(project.image);
         </p>
 
         {/* Image Placeholder */}
-<div
-  className="
-    mt-16
+{/* Screenshot */}
 
-    overflow-hidden
-
-    rounded-[40px]
-
-    bg-[#F6F6F6]
-
-    p-4
-
-    md:p-8
-
-    shadow-[0_10px_40px_rgba(0,0,0,0.05)]
-
-    transition-all
-    duration-500
-
-    hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)]
-  "
->
-  <img
-    src={project.image}
-    alt={project.company}
+<div className="mt-16 -mx-6 md:mx-0">
+  <div
     className="
-      w-full
-      h-auto
+      overflow-hidden
 
-      rounded-[28px]
+      rounded-[32px]
 
-      transition-transform
-      duration-700
+      bg-[#F6F6F6]
 
-      hover:scale-[1.015]
+      p-2
+
+      sm:p-3
+
+      md:p-6
+
+      lg:p-8
+
+      shadow-[0_10px_40px_rgba(0,0,0,0.05)]
+
+      transition-all
+      duration-500
     "
-  />
-</div>
+  >
+    <img
+      src={project.image}
+      alt={project.company}
+      className="
+        w-full
+        h-auto
 
-        {/* Bottom Bar */}
+        rounded-[28px]
+
+        transition-transform
+        duration-700
+
+        hover:scale-[1.015]
+      "
+    />
+  </div>
+</div>
+{/* Bottom Bar */}
 
 <div
   className="
-    mt-10
+    mt-6
 
     flex
     flex-col
-    gap-6
+    gap-4
 
     rounded-3xl
     bg-neutral-100
 
-    px-6
-    py-6
+    px-5
+    py-4
 
     md:flex-row
     md:items-center
     md:justify-between
     md:rounded-full
     md:px-8
+    md:py-4
   "
 >
-<div className="flex flex-wrap justify-center gap-3 md:justify-start">
-                {project.technologies.map((tech) => (
-              <span
-                key={tech}
-                className="rounded-full bg-white px-4 py-2 text-sm font-medium shadow-sm"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
+  {/* Technologies */}
 
-<div className="flex justify-center gap-8">            <a
-              href={project.live}
-              className="font-medium transition hover:opacity-60"
-            >
-              Live →
-            </a>
+  <div className="flex flex-wrap justify-center gap-2 md:justify-start">
+    {project.technologies.map((tech) => (
+      <span
+        key={tech}
+        className="
+          rounded-full
+          bg-white
 
-            <a
-              href={project.github}
-              className="font-medium transition hover:opacity-60"
-            >
-              GitHub →
-            </a>
-          </div>
+          px-4
+          py-1.5
 
-        </div>
+          text-sm
+          font-medium
+
+          shadow-sm
+        "
+      >
+        {tech}
+      </span>
+    ))}
+  </div>
+
+  {/* Links */}
+
+  <div className="flex justify-center gap-5">
+    <a
+      href={project.live}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="
+        font-medium
+        text-black
+
+        transition-all
+        duration-300
+
+        hover:opacity-60
+      "
+    >
+      Live →
+    </a>
+
+    <a
+      href={project.github}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="
+        font-medium
+        text-black
+
+        transition-all
+        duration-300
+
+        hover:opacity-60
+      "
+    >
+      GitHub →
+    </a>
+  </div>
+</div>
 
       </div>
     </section>

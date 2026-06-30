@@ -12,7 +12,7 @@ const Navbar = () => {
     },
     {
       title: "GitHub",
-      href: "#github",
+      href: "https://github.com/bhanusanjeev",
     },
     {
       title: "Work",
